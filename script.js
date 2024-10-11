@@ -1,5 +1,5 @@
 const countdown = () => {
-    const firstAnniversary = new Date('October 10, 2024 00:00:00').getTime();
+    const firstAnniversary = new Date('October 10, 2025 00:00:00').getTime();
     const now = new Date().getTime();
     const timeDifference = firstAnniversary - now;
 
