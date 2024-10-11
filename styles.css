@@ -1,3 +1,4 @@
+/* General styles */
 body {
     font-family: Arial, sans-serif;
     color: #333;
@@ -9,16 +10,16 @@ body {
 
 .container {
     text-align: center;
-    padding: 100px;
+    padding: 50px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 15px;
     max-width: 600px;
-    margin: 100px auto;
+    margin: 50px auto;
 }
 
 h1 {
     font-size: 2.5em;
-    color: #4a90e2;
+    color: #ffdd59;
 }
 
 p {
@@ -31,6 +32,7 @@ p {
     justify-content: space-around;
     font-size: 2em;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 #countdown div {
@@ -38,8 +40,64 @@ p {
     color: white;
     padding: 20px;
     border-radius: 10px;
+    margin: 10px;
+    flex: 1 1 100px; /* Adjusts the boxes' flexibility */
+    text-align: center;
 }
 
 #days, #hours, #minutes, #seconds {
     font-size: 2.5em;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+        margin: 50px 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    #countdown {
+        font-size: 1.5em;
+    }
+
+    #countdown div {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        margin: 30px 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    #countdown {
+        font-size: 1.2em;
+        flex-direction: column;
+    }
+
+    #countdown div {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    #days, #hours, #minutes, #seconds {
+        font-size: 2em;
+    }
 }
