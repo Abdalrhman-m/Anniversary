@@ -1,31 +1,54 @@
 /* General styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Baloo 2', 'Comic Sans MS', Arial, sans-serif;
     color: #333;
-    background: url('background-photo2.jpg') no-repeat center center fixed;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%), url('background-photo2.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    position: relative;
 }
 
 .container {
     text-align: center;
     padding: 50px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 25px;
     max-width: 600px;
     margin: 50px auto;
+    box-shadow: 0 8px 32px 0 rgba(60, 60, 120, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #ffdd59;
 }
+
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2.8em;
     color: #ffdd59;
+    text-shadow: 2px 2px 8px #fcb69f, 0 0 10px #fff;
+    margin-bottom: 10px;
+    font-family: 'Baloo 2', cursive, Arial, sans-serif;
 }
 
-p {
-    font-size: 1.5em;
-    color: #4a90e2;
+.anniversary-number {
+    font-size: 2em;
+    color: #ff6f61;
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 6px #fff2e6;
 }
+
+
+p {
+    font-size: 1.3em;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    font-family: 'Baloo 2', cursive, Arial, sans-serif;
+}
+
 
 #countdown {
     display: flex;
@@ -33,71 +56,108 @@ p {
     font-size: 2em;
     margin-top: 30px;
     flex-wrap: wrap;
+    gap: 10px;
+    position: relative;
 }
 
+
 #countdown div {
-    background-color: #4a90e2;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
+    background: linear-gradient(135deg, #ffdd59 0%, #ff6f61 100%);
+    color: #fff;
+    padding: 25px 20px;
+    border-radius: 15px;
     margin: 10px;
-    flex: 1 1 100px; /* Adjusts the boxes' flexibility */
+    flex: 1 1 100px;
     text-align: center;
+    box-shadow: 0 4px 16px 0 rgba(255, 111, 97, 0.15);
+    font-family: 'Baloo 2', cursive, Arial, sans-serif;
+    position: relative;
+    transition: transform 0.2s;
 }
+
+#countdown div:hover {
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 8px 32px 0 rgba(255, 111, 97, 0.25);
+}
+
 
 #days, #hours, #minutes, #seconds {
     font-size: 2.5em;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.label {
+    font-size: 1em;
+    color: #fff2e6;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: block;
+}
+
+.celebrate {
+    font-size: 2.2em;
+    color: #ff6f61;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px #ffecd2, 0 0 10px #fff;
+    margin: 30px 0;
+    animation: pop 1s infinite alternate;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.08); }
 }
 
 /* Media queries for responsiveness */
+
 @media (max-width: 768px) {
     .container {
         padding: 30px;
         margin: 50px 20px;
     }
-
     h1 {
         font-size: 2em;
     }
-
-    p {
-        font-size: 1.2em;
+    .anniversary-number {
+        font-size: 1.3em;
     }
-
-    #countdown {
-        font-size: 1.5em;
-    }
-
-    #countdown div {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 20px;
-        margin: 30px 10px;
-    }
-
-    h1 {
-        font-size: 1.8em;
-    }
-
     p {
         font-size: 1em;
     }
-
     #countdown {
         font-size: 1.2em;
+    }
+    #countdown div {
+        padding: 12px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        margin: 20px 5px;
+    }
+    h1 {
+        font-size: 1.2em;
+    }
+    .anniversary-number {
+        font-size: 1em;
+    }
+    p {
+        font-size: 0.9em;
+    }
+    #countdown {
+        font-size: 1em;
         flex-direction: column;
     }
-
     #countdown div {
-        padding: 10px;
-        margin: 10px 0;
+        padding: 8px;
+        margin: 8px 0;
     }
-
     #days, #hours, #minutes, #seconds {
-        font-size: 2em;
+        font-size: 1.3em;
     }
 }
